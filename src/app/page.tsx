@@ -1,5 +1,6 @@
 import Banner from "@/components/shared/Banner";
 import NewsCard from "@/components/shared/NewsCard";
+import NewsLetter from "@/components/shared/NewsLetter";
 import { News } from "@/types/news";
 
 
@@ -26,6 +27,8 @@ const news = await res.json()
           
         </div>
       </div>
+
+      <NewsLetter></NewsLetter>
 
     </div>
 

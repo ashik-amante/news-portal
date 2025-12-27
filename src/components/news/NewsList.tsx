@@ -1,0 +1,46 @@
+"use client"
+
+import { fetchNews } from "@/lib/fetchNews"
+import { News } from "@/types/news"
+import { useEffect, useState } from "react"
+import NewsCard from "../shared/NewsCard"
+import SearchBar from "./SearchBar"
+import CategoryFilter from "./CategoryFilter"
+
+const NewsList = () => {
+    const [news, setNews] = useState<News[]>([])
+    const [search, setSearch] = useState<string>('')
+    const [category, setCategory] = useState<string>('')  
+     
+
+    useEffect(()=>{
+        const getNews = async ()=>{
+            const data = await fetchNews(category,search)
+            setNews(data)
+        }
+        getNews()
+    },[category,search])
+
+    console.log(news); 
+    console.log(search); 
+
+  return (
+    <div>
+        <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 md:gap-12 mb-5">
+            <SearchBar onSearch={setSearch}></SearchBar>
+
+            <CategoryFilter></CategoryFilter>
+        </div>
+        {/*news cards */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+            {
+                news.map((news:News)=>(
+                    <NewsCard key={news._id} news={news}></NewsCard>
+                ))
+            }
+        </div>
+    </div>
+  )
+}
+
+export default NewsList

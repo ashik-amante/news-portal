@@ -15,7 +15,7 @@ import {
 import { Button } from "../ui/button"
 
 import { usePathname } from "next/navigation";
-import { useState } from "react"
+
 import MobileMenu from "./MobileMenu"
 
 
