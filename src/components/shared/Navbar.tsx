@@ -45,7 +45,7 @@ const Navbar = () => {
 
                         {/* Services */}
                         <NavigationMenuItem>
-                            <NavigationMenuTrigger className="dark:bg-gray-800 text-white" >Services</NavigationMenuTrigger>
+                            <NavigationMenuTrigger className=" dark:bg-gray-800 dark:text-white" >Services</NavigationMenuTrigger>
 
                             <NavigationMenuContent>
                                 <ul className="p-4 space-y-2">
