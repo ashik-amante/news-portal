@@ -1,9 +1,9 @@
 
 
-export const fetchNews = async (category: string = '', search: string = '') => {
+export const fetchNews = async () => {
 
     try {
-        const res = await fetch(`http://localhost:3000/news.json?category=${category}&search=${search}`)
+        const res = await fetch(`http://localhost:3000/news.json`)
         if (!res.ok) {
             throw new Error('Failed to fetch news')
         }
