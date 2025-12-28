@@ -46,6 +46,10 @@
   --radius-4xl: calc(var(--radius) + 16px);
 }
 
+.dark{
+  @apply bg-gray-800 text-white
+}
+
 :root {
   --radius: 0.625rem;
   --background: oklch(1 0 0);

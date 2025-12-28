@@ -1,15 +1,14 @@
 import Image from 'next/image'
-import React from 'react'
 
 import bannerImage from "@/assets/news.jpg"
 import { Button } from '../ui/button'
 
 const Banner = () => {
     return (
-        <div className='bg-slate-100'>
+        <div className='bg-slate-100 rounded-md dark:bg-gray-800 dark:text-white'>
             <div className='grid grid-cols-1 lg:grid-cols-2 gap-6 px-4 py-10'>
                 <div>
-                    <Image src={bannerImage} alt='news'></Image>
+                    <Image src={bannerImage} alt='news' className='rounded-md'></Image>
                 </div>
 
                 <div className='space-y-6 flex flex-col justify-center ml-3'>

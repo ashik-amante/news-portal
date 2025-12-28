@@ -1,5 +1,5 @@
 import NewsList from '@/components/news/NewsList'
-import Link from 'next/link'
+
 import React from 'react'
 
 const NewsPage = () => {

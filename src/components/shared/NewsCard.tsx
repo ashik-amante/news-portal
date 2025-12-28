@@ -13,7 +13,7 @@ const NewsCard = ({news} : NewsProps) => {
             <div className='mt-2 space-y-3'>
                 <h1 className='textxl font-bold'>{news.title.substring(0, 70)}..</h1>
                 <p>{news.description.substring(0, 100)}...</p>
-                <Link href={'/'}>
+                <Link href={`/news/${news._id}`}>
                     <Button>Read More</Button>
                 </Link>
             </div>

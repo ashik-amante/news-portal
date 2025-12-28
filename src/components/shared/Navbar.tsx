@@ -5,25 +5,26 @@ import { Switch } from "@/components/ui/switch"
 import {
     NavigationMenu,
     NavigationMenuContent,
-    NavigationMenuIndicator,
     NavigationMenuItem,
     NavigationMenuLink,
     NavigationMenuList,
     NavigationMenuTrigger,
-    NavigationMenuViewport,
 } from "@/components/ui/navigation-menu"
 import { Button } from "../ui/button"
 
 import { usePathname } from "next/navigation";
 
 import MobileMenu from "./MobileMenu"
+import { useTheme } from "@/context/ThemeContext"
 
 
 const Navbar = () => {
     const pathname = usePathname()
+    // const {isDarkMode, toggleTheme} = useContext(ThemeContext)
+    const {isDarkMode,toggleTheme} = useTheme()
     
     return (
-        <header className="py-4 shadow-md">
+        <header className={`py-4 shadow-md ${isDarkMode ? "bg-gray-800" : "bg-white"}`}>
             <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center ">
                 {/* logo */}
                 <div className="text-xl font-bold">
@@ -44,7 +45,7 @@ const Navbar = () => {
 
                         {/* Services */}
                         <NavigationMenuItem>
-                            <NavigationMenuTrigger >Services</NavigationMenuTrigger>
+                            <NavigationMenuTrigger className="dark:bg-gray-800 text-white" >Services</NavigationMenuTrigger>
 
                             <NavigationMenuContent>
                                 <ul className="p-4 space-y-2">
@@ -87,7 +88,7 @@ const Navbar = () => {
                 {/* theme change */}
 
                 <div className=" items-center space-x-4 hidden lg:flex ">
-                    <div className="flex items-center">
+                    <div onClick={toggleTheme} className="flex items-center">
                         <span className="mr-2">Dark Mode</span>
                         <Switch />
                     </div>
